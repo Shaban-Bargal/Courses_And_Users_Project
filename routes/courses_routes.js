@@ -8,7 +8,7 @@ const allowedTo = require("../middlewares/allowedTo");
 const coursesController = require("../controllers/courses_controlles");
 
 router.route("/")
-    .get(coursesController.getAllCourse)
+    .get( verivyToken ,coursesController.getAllCourse)
     .post( verivyToken , validation(), coursesController.createCourse)
 
 router.route("/:id")
